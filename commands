@@ -1,0 +1,57 @@
+====== Player Commands ======                                                   
+Player power levels are divided into 4 categories.                              
+                                                                                
+The power levels listed here are the default levels.
+Server administrators may modify the privilege levels for commands on an as needed basis.
+                                                                                
+adm_adminPowerLevels:                                                           
+                                                                                
+0: superadmin                                                                   
+1: moderator                                                                    
+2: liteadmin                                                                    
+777: everyone                                                                   
+                                                                                
+Command : Powerlevel : Example Usage : Notes                                    
+                                                                                
+# Administrator Commands                                                        
+                                                                        
+reload :    1 : !reload                     : reloads the map                   
+runnext :   2 : !runnext                    : runs the next map immediately     
+setnext :   2 : !setnext muttrah cq std     : sets the next map                 
+mapvote :   2 : !mapvote ramiel gaza kokan  : runs a map vote with 3 maps       
+message :   2 : !message message            : unknown                           
+tickets :   0 : !tickets                    : shows the number of tickets on each team
+ban :       1 : !ban player123 reason       : permanantly bans a player         
+timeban :   1 : !timeban player123 reason   : bans a player for 4 hours         
+unban :     1 : !unban player123            : unbans a player                   
+fly :       0 : !fly player123 10000        : flings a player 'n' meters in the air
+hash :      2 : !hash player123             : retreives player123 hash          
+init :      2 : !init                       : reloads the admin hash and power levels list
+scramble :  0 : !scramble                   : scramble the teams                
+aa :        1 : !aa 0/1                     : turns on or off the auto admin     
+kick :      2 : !kick player123             : kicks a player from the server    
+kill :      1 : !kill player123 reason      : kill a player                     
+resign :    2 : !resign player123 reason OR !resign #<squadnumber>us/them reason        : resign a squadleader or entire squad
+resignall : 2 : !resignall #<squadnumber>us/them reason                                 : resigns an entire squad
+switch :    2 : !switch player123 <now><next> OR !switch #<squadnumber>us/them now/next : switch a player or squad right now, or next round
+tempban :   1 : !tempban player123 reason   : ban a player for 4 hours          
+warn :      2 : !warn player123 reason      : warn a player                     
+help :      2 : !help                       : unknown                           
+say :       2 : !say foo bar                : prints 'foo bar' at the top of the screen in green text
+sayteam :   2 : !sayteam <us>/<them> foo bar: prints 'TEAM: foo bar' at the top of the screen to a certain team
+ab :        2 : !ab 0/1                     : turns autobalance on or off       
+swapteams : 0 : !swapteams                  : switches all the players to the opposite team                             
+stopserver :0 : !stopserver                 : stop the server                   
+history :   0 : !history                    : displays the last 6 maps          
+ungrief :   1 : !ungrief                    : used to restore FOBs removed by a commander that was griefing
+
+# Commands every player can use  
+                                                                         
+admins :        777 : !admins               : display a list of the admins on the server
+reportplayer :  777 : !reportplayer player123 reason : report a player to an admin
+report :        777 : !report reason        : report to an admin                
+rules :         777 : !rules                : displays a list of rules (does not work on a lot of servers)
+shownext :      777 : !shownext             : show the next map                 
+givelead :      777 : !givelead player123   : give squad lead to player123      
+br :            777 : !br                   : display battlerecorder quality level
+flip :          777 : !flip 10              : random number generator, will generate a number from 0 to 10 in this example                                                           
