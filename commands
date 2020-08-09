@@ -3,6 +3,8 @@ Player power levels are divided into 4 categories.
                                                                                 
 The power levels listed here are the default levels.
 Server administrators may modify the privilege levels for commands on an as needed basis.
+
+This has been updated for 1.6
                                                                                 
 adm_adminPowerLevels:                                                           
                                                                                 
@@ -19,12 +21,12 @@ reload :    1 : !reload                     : reloads the map
 runnext :   2 : !runnext                    : runs the next map immediately     
 setnext :   2 : !setnext muttrah cq std     : sets the next map                 
 mapvote :   2 : !mapvote ramiel gaza kokan  : runs a map vote with 3 maps       
-message :   2 : !message message            : unknown                           
+message :   2 : !message shrap hello        : sends a personal message to just one player like !say does to the whole server
 tickets :   0 : !tickets                    : shows the number of tickets on each team
 ban :       1 : !ban player123 reason       : permanantly bans a player         
 timeban :   1 : !timeban player123 reason   : bans a player for 4 hours         
 unban :     1 : !unban player123            : unbans a player                   
-fly :       0 : !fly player123 10000        : flings a player 'n' meters in the air
+fly :       0 : !fly player123 1000         : flings a player 'n' meters (up to 1000) in the air
 hash :      2 : !hash player123             : retreives player123 hash          
 init :      2 : !init                       : reloads the admin hash and power levels list
 scramble :  0 : !scramble                   : scramble the teams                
@@ -42,8 +44,26 @@ sayteam :   2 : !sayteam <us>/<them> foo bar: prints 'TEAM: foo bar' at the top 
 ab :        2 : !ab 0/1                     : turns autobalance on or off       
 swapteams : 0 : !swapteams                  : switches all the players to the opposite team                             
 stopserver :0 : !stopserver                 : stop the server                   
-history :   0 : !history                    : displays the last 6 maps          
-ungrief :   1 : !ungrief                    : used to restore FOBs removed by a commander that was griefing
+history :   0 : !history                    : displays the last 6 maps
+
+ungrief allows admins to rebuild removed fobs and teleport/destroy vehicles outside the map
+
+
+ungrief :   1 : !ungrief deployable list        : displays assets (fobs razorwire tow aa emplacements) that have been removed by a commander with an index number
+              : !ungrief deployable rebuild 102 : rebuilds the asset at index 102 listed from the command above
+              : !ungrief dodvehicle list        : list vehicles outside the map boundary and their vehicle id
+              : !ungrief dodvehicle destroy 5   : destroy vehicle 5 listed from the command above
+              : !ungrief dodvehicle teleport 6  : teleport vehicle 6 back into mainbase (admin must stand in their own mainbase to use this command)
+
+Since 1.6 new admin commands have been added to replace !whitelist commands. !ec 'entrance control'
+Servers have the option to allow entry based on a trust score the master server calculates. 0|1|2 from lowest to highest trust.
+
+
+ec :        1 : !ec recent                  : shows recent entrance control denials and player index numbers
+              : !ec whitelist 5             : whitelists player 5 to allow them into the server regardless of trust score
+              : !ec minimum 0|1|2           : sets the minimum trust score players are allowed to have when joining the server
+              : !ec info shrap              : prints ec info about the player VAC Ban status
+info :        : !info shrap                 : shows information about the player account status (legacy, new) and ip information
 
 # Commands every player can use  
                                                                          
